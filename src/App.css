@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply overflow-hidden h-[100vh];
+	cursor: url('/assets/cursor.svg'), auto;
+}
+
+image {
+	load: eager;
+}
+
+@font-face {
+	font-family: 'andalousBold';
+	src: url('/font/ElMessiri-Bold.ttf') format('opentype');
+}
+
+@font-face {
+	font-family: 'andalousMedium';
+	src: url('/font/ElMessiri-Medium.ttf') format('opentype');
+}
+
+@font-face {
+	font-family: 'andalousRegular';
+	src: url('/font/ElMessiri-Regular.ttf') format('opentype');
+}
+
+@font-face {
+	font-family: 'andalousSemiBold';
+	src: url('/font/ElMessiri-SemiBold.ttf') format('opentype');
+}
+
+.animated-text-strip {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 1rem 0;
+	margin-bottom: -5%;
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+.marquee {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: white;
+	white-space: nowrap;
+	animation: marquee 15s linear infinite;
+	max-width: none;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+}
+
+.animated-text-strip .marquee {
+	white-space: nowrap;
+	animation: marquee 15s linear infinite;
+	max-width: none;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+}
+
+.marquee {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: white;
+}
+
+.paragraph {
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+.contact {
+	text-shadow: 1px 1px 1px rgb(255, 255, 255);
+}
+
+.contactHover img {
+	transition: transform 0.7s ease-in-out;
+  }
+  
+  .contactHover:hover img {
+	transform: rotate(360deg);
+  }
+
+.navContainer a.active {
+	@apply opacity-100;
+}
+
+.main__container {
+	width: 90%;
+	padding: 3px;
+	max-width: 600px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+img {
+	select-user: none;
+}
+
+.flipped-image {
+	transform: scaleX(-1);
+}
+
+.landingContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	z-index: 100;
+	@apply bg-red-950;
+}
+
+circle,
+rect,
+line {
+	stroke-width: 10px;
+	stroke-linecap: round;
+	fill: transparent;
+}
+
+@media only screen and (max-width: 800px) {
+	.arrow,
+	.description,
+	.madeInMorocco {
+		display: none;
+	}
+}
